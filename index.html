@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded shadow w-full max-w-md text-center">
+    <h1 class="text-2xl font-bold mb-4">Length Converter</h1>
+    <input id="value" type="number" placeholder="Enter value" class="border p-2 w-full mb-4" />
+    <div class="flex gap-2 mb-4">
+      <button onclick="toKilometers()" class="border px-4 py-2 w-full">Meters to Kilometers</button>
+      <button onclick="toMeters()" class="border px-4 py-2 w-full">Kilometers to Meters</button>
+    </div>
+    <div id="result" class="text-xl"></div>
+  </div>
+
+  <script>
+    function toKilometers() {
+      const input = document.getElementById('value').value
+      const result = (input / 1000).toFixed(3)
+      document.getElementById('result').textContent = `${result} km`
+    }
+
+    function toMeters() {
+      const input = document.getElementById('value').value
+      const result = (input * 1000).toFixed(0)
+      document.getElementById('result').textContent = `${result} m`
+    }
+  </script>
+</body>
+</html>
